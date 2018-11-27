@@ -10,11 +10,11 @@ def render_main():
      return render_template('index.html')
 
 @app.route("/Page1")
-def render_main():
+def render_one():
      return render_template('Page1.html')
 
 @app.route("/Page2")
-def render_main():
+def render_two():
      return render_template('Page2.html')
 
 
