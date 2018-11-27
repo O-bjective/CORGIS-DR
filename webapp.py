@@ -11,7 +11,16 @@ def render_main():
 
 @app.route("/Page1")
 def render_one():
-     return render_template('Page1.html')
+     return render_template('Page1.html', my_variable = state_options())
+
+def state_options():
+    for county in counties:
+        state = county["State"]
+        if not state in listOfStates :
+            listOfStates.append(state)
+    for state in listOfStates:
+        options += Markup("<option value=\"" +state+ "\">" +state+ "</option>")
+    return options
 
 @app.route("/Page2")
 def render_two():
