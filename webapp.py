@@ -14,8 +14,8 @@ def render_one():
      return render_template('Page1.html', my_variable = state_options())
 
 def state_options():
-    for county in counties:
-        state = county["State"]
+    for State in :
+        state = ["State"]
         if not state in listOfStates :
             listOfStates.append(state)
     for state in listOfStates:
