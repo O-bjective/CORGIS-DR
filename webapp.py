@@ -5,17 +5,17 @@ import json
 
 app = Flask(__name__)
 
-@app.route(".")
+@app.route("/")
 def render_main():
      return render_template('index.html')
 
-#@app.route("Page1")
-#def render_main():
-#     return render_template('Page1.html')
+@app.route("/Page1")
+def render_main():
+     return render_template('Page1.html')
 
-#@app.route("Page2")
-#def render_main():
-#     return render_template('Page2.html')
+@app.route("/Page2")
+def render_main():
+     return render_template('Page2.html')
 
 
 if __name__ == "__main__":
