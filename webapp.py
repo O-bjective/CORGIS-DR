@@ -14,12 +14,14 @@ def render_one():
      return render_template('Page1.html', my_variable = state_options())
 
 def state_options():
-    for State in :
-        state = ["State"]
-        if not state in listOfStates :
-            listOfStates.append(state)
-    for state in listOfStates:
-        options += Markup("<option value=\"" +state+ "\">" +state+ "</option>")
+     with open('finance(1).json') as finance:
+        states = json.load(finance)
+    for State in states:
+        State = states["State"]
+        if not State in states :
+            states.append(state)
+    for State in states:
+        options += Markup("<option value=\"" +State+ "\">" +State+ "</option>")
     return options
 
 @app.route("/Page2")
