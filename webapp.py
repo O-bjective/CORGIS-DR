@@ -22,7 +22,7 @@ def state_options():
         S = State["State"]
         if not S in ListofStates:
             ListofStates.append(S)
-    for State in states:
+    for State in ListofStates:
         options += Markup("<option value=\"" +State+ "\">" +State+ "</option>")
     return options
 
