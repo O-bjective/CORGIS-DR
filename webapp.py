@@ -23,7 +23,7 @@ def state_options():
         if not S in ListofStates:
             ListofStates.append(S)
     for State in states:
-        options += Markup("<option value=\"" +S+ "\">" +S+ "</option>")
+        options += Markup("<option value=\"" +State+ "\">" +State+ "</option>")
     return options
 
 @app.route("/Page2")
