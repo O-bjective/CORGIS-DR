@@ -17,9 +17,9 @@ def state_options():
     with open('finance(1).json') as finance:
         states = json.load(finance)
     for State in states:
-        State = states["State"]
-        if not State in states :
-            states.append(state)
+        S = State["State"]
+        if not S in ListofStates:
+            ListofStates.append(state)
     for State in states:
         options += Markup("<option value=\"" +State+ "\">" +State+ "</option>")
     return options
