@@ -14,6 +14,7 @@ def render_one():
      return render_template('Page1.html', my_variable = state_options())
 
 def state_options():
+    ListofStates = []
     with open('finance(1).json') as finance:
         states = json.load(finance)
     for State in states:
