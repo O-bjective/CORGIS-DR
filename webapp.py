@@ -11,7 +11,7 @@ def render_main():
 
 @app.route("/Page1")
 def render_one():
-     return render_template('Page1.html', my_variable = state_options())
+     return render_template('Page1.html', state_options = state_options())
 
 def state_options():
     ListofStates = []
