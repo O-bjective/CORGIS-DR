@@ -15,6 +15,7 @@ def render_one():
 
 def state_options():
     ListofStates = []
+    options = ""
     with open('finance(1).json') as finance:
         states = json.load(finance)
     for State in states:
