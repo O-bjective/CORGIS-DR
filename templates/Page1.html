@@ -5,7 +5,7 @@
     <div id="content">
       <h1>List of All States and their Finances.</h1>
       <p>Select the State and the Year you wish to look at.</p>
-    <form action="/finance">
+    <form action="/Page1">
       <select name="State">
         {{state_options}}
       </select>
@@ -31,4 +31,10 @@
       <br>
       <br>
       <input type="submit">
+      <br>
+      <br>
+      <br>
+      {%if 'exist' not in data%}
+      {{data}}
+      {%endif%}
 {%endblock%}

@@ -11,7 +11,15 @@ def render_main():
 
 @app.route("/Page1")
 def render_one():
-     return render_template('Page1.html', state_options = state_options())
+    try :
+        year = request.args["Year"]
+        state = request.args["State"]
+        data = spfc_finance(year, state)
+        return render_template('Page1.html', state_options = state_options(), data = data)
+    except:
+        return render_template('Page1.html', state_options = state_options(), data = {"exist":'no'})
+
+
 
 def state_options():
     ListofStates = []
@@ -29,6 +37,13 @@ def state_options():
 @app.route("/Page2")
 def render_two():
      return render_template('Page2.html')
+
+def spfc_finance(year, state):
+    with open ('finance(1).json') as finance:
+        specific = json.load(finance)
+    for data in specific:
+        if data["Year"] == year and data["State"] == state:
+            return data
 
 
 
