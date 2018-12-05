@@ -11,13 +11,24 @@ def render_main():
 
 @app.route("/Page1")
 def render_one():
-    try :
+    if "Year" in request.args and "State" in request.args:
         year = request.args["Year"]
         state = request.args["State"]
         data = spfc_finance(year, state)
         return render_template('Page1.html', state_options = state_options(), data = data)
-    except:
+        print("hey")
+    else:
         return render_template('Page1.html', state_options = state_options(), data = {"exist":'no'})
+
+
+
+    #try :
+        #year = request.args["Year"]
+        #state = request.args["State"]
+        #data = finance(year, state)
+        #return render_template('Page1.html', state_options = state_options(), data = data)
+    #except:
+        #return render_template('Page1.html', state_options = state_options(), data = {"exist":'no'})
 
 
 
@@ -41,8 +52,9 @@ def render_two():
 def spfc_finance(year, state):
     with open ('finance(1).json') as finance:
         specific = json.load(finance)
+    print("here")
     for data in specific:
-        if data["Year"] == year and data["State"] == state:
+        if str(data["Year"]) == year and data["State"] == state:
             return data
 
 
