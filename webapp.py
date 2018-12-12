@@ -21,17 +21,6 @@ def render_one():
         return render_template('Page1.html', state_options = state_options(), data = {"exist":'no'})
 
 
-
-    #try :
-        #year = request.args["Year"]
-        #state = request.args["State"]
-        #data = finance(year, state)
-        #return render_template('Page1.html', state_options = state_options(), data = data)
-    #except:
-        #return render_template('Page1.html', state_options = state_options(), data = {"exist":'no'})
-
-
-
 def state_options():
     ListofStates = []
     options = ""

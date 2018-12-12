@@ -34,5 +34,11 @@
       <br>
       <br>
       <br>
-      {{data}}
+
+      <ul>
+          {%for items in data %}
+            <li> {{items}}: {{data[items]|e}} </li>
+          {% endfor %}
+
+      </ul>
 {%endblock%}
