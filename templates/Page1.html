@@ -1,44 +1,44 @@
 {%extends "layout.html"%}
-  {%set active_page ="Page1" %}
-  {%block title%}home{%endblock%}
-  {%block content%}
-    <div id="content">
-      <h1>List of All States and their Finances.</h1>
-      <p>Select the State and the Year you wish to look at.</p>
-    <form action="/Page1">
-      <select name="State">
-        {{state_options}}
-      </select>
-      <select name="Year">
-        <option value="1996">1996</option>
-        <option value="1997">1997</option>
-        <option value="1998">1998</option>
-        <option value="1999">1999</option>
-        <option value="2001">2001</option>
-        <option value="2002">2002</option>
-        <option value="2003">2003</option>
-        <option value="2004">2004</option>
-        <option value="2005">2005</option>
-        <option value="2006">2006</option>
-        <option value="2007">2007</option>
-        <option value="2008">2008</option>
-        <option value="2009">2009</option>
-        <option value="2010">2010</option>
-        <option value="2011">2011</option>
-        <option value="2012">2012</option>
-        <option value="2013">2013</option>
-      </select>
-      <br>
-      <br>
-      <input type="submit">
-      <br>
-      <br>
-      <br>
+{%set active_page ="Page1" %}
+{%block title%}home{%endblock%}
+{%block content%}
+<div id="content">
+  <h1>List of All States and their Finances.</h1>
+  <p>Select the State and the Year you wish to look at.</p>
+  <form action="/Page1">
+    <select name="State">
+      {{state_options}}
+    </select>
+    <select name="Year">
+      <option value="1996">1996</option>
+      <option value="1997">1997</option>
+      <option value="1998">1998</option>
+      <option value="1999">1999</option>
+      <option value="2001">2001</option>
+      <option value="2002">2002</option>
+      <option value="2003">2003</option>
+      <option value="2004">2004</option>
+      <option value="2005">2005</option>
+      <option value="2006">2006</option>
+      <option value="2007">2007</option>
+      <option value="2008">2008</option>
+      <option value="2009">2009</option>
+      <option value="2010">2010</option>
+      <option value="2011">2011</option>
+      <option value="2012">2012</option>
+      <option value="2013">2013</option>
+    </select>
+    <br>
+    <br>
+    <input type="submit">
+    <br>
+    <br>
+    <br>
 
-      <ul>
-          {%for items in data %}
-            <li> {{items}}: {{data[items]|e}} </li>
-          {% endfor %}
+    <ul>
+      {%for items in data %}
+      <li> {{items}}: {{data[items]|e}} </li>
+      {% endfor %}
 
-      </ul>
-{%endblock%}
+    </ul>
+    {%endblock%}
