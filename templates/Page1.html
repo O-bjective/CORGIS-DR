@@ -36,8 +36,16 @@
     <br>
 
     <ul>
+
       {%for items in data %}
-      <li> {{items}}: {{data[items]|e}} </li>
+      <li> {{items}}:
+        <ul>
+        {%for key in data[items]%}
+          <li>{{ key.items|e }}</li>
+          {% endfor %}
+        </ul>
+      </li>
+
       {% endfor %}
 
     </ul>
