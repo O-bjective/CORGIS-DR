@@ -37,16 +37,9 @@
 
     <ul>
       {%for items in data %}
-      <li> {{items}}:
+      <li> {{items}}: {{data[items]|e}}
         <ul>
-        {% if data[items] is mapping %}
-          "yes"
-        {% else %}
-          "no"
-        {% endif %}
-        {%for key in data[items]%}
-          <li>{{ key }}</li>
-          {% endfor %}
+
         </ul>
       </li>
 
